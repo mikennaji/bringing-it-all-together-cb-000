@@ -13,7 +13,7 @@ end
 
 def self.create_table
   sql = <<-SQL
-      CREATE TABLE IF NOT EXITS dogs (
+      CREATE TABLE IF NOT EXISTS dogs (
         id INTEGER PRIMARY KEY,
         name TEXT,
         breed TEXT
@@ -35,7 +35,8 @@ def save
     INSERT INTO dogs(name,breed) VALUES (?,?)
   SQL
   DB[:conn].execute(sql)
-
+  @id = DB[:conn].execute("SELECT last_insert_rowid();")[0][0]
+  
 end
 
 

@@ -48,7 +48,7 @@ def self.create(hash)
 end
 
 def self.new_from_db(row)
-  new_song = self.new(row[0],row[1],row[2])
+  new_song = self.new(id: row[0],name: row[1],grade: row[2])
 
 
 end

@@ -9,7 +9,7 @@ attr_reader :id
 def initialize(attributes)
     attributes.each {|key, value| self.send(("#{key}="), value)}
   end
-end
+
 
 def self.create_table
   sql = <<-SQL

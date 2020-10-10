@@ -36,7 +36,7 @@ def save
   SQL
   DB[:conn].execute(sql)
   @id = DB[:conn].execute("SELECT last_insert_rowid();")[0][0]
-  
+
 end
 
 

@@ -42,7 +42,7 @@ end
 
 def self.create(hash)
   new_dog = self.new(hash)
-  new_dog.save 
+  new_dog.save
   new_dog
 
 end

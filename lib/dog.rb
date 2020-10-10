@@ -5,10 +5,10 @@ class Dog
 attr_accessor :name, :breed
 attr_reader :id
 
-def initialize(id: nil,name:,breed:)
-  @name = name
-  @breed = breed
-  @id = id
+
+def initialize(attributes)
+    attributes.each {|key, value| self.send(("#{key}="), value)}
+  end
 end
 
 def self.create_table
@@ -41,7 +41,7 @@ def save
 end
 
 def self.create(name:,breed:)
-  new_dog = self.new(name:,breed:)
+  new_dog = self.new(name: , breed:)
   new_dog.save
   new_dog
 end

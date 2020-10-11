@@ -6,7 +6,7 @@ attr_accessor :name, :breed
 attr_reader :id
 
 
-def initialize(attributes=nil,id=nil,name,breed)
+def initialize(attributes,id=nil,name,breed)
     attributes.each {|key, value| self.send(("#{key}="), value)}
     @id = id
     @name = name

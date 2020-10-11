@@ -6,8 +6,10 @@ attr_accessor :name, :breed
 attr_reader :id
 
 
-def initialize(attributes)
-    attributes.each {|key, value| self.send(("#{key}="), value)}
+def initialize(id: nil,name:,breed:)
+    @name = name
+    @breed = breed 
+    @id = id 
   end
 
 
@@ -40,10 +42,9 @@ def save
 
 end
 
-def self.create(hash)
-  new_dog = self.new(hash)
-  new_dog.save
-  new_dog
+def self.create(attributes)
+      attributes.each {|key, value| self.send(("#{key}="), value)}
+  self.save
 
 end
 

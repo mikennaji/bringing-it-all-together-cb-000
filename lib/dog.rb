@@ -52,7 +52,7 @@ def self.create(attributes)
 end
 
 def self.new_from_db(row)
-  new_song = self.new(id: row[0],name: row[1],grade: row[2])
+  new_song = self.new(row)
 
 
 end

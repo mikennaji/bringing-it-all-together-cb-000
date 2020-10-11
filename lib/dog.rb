@@ -8,9 +8,9 @@ attr_reader :id
 
 def initialize(attributes=nil,id=nil,name=nil,breed=nil)
     attributes.each {|key, value| self.send(("#{key}="), value)}
-    @id = id 
-    @name = name 
-    @breed = breed 
+    @id = id
+    @name = name
+    @breed = breed
     
   end
 

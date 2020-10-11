@@ -80,7 +80,7 @@ def self.find_or_create_by(name:,breed:)
   else
     self.new_from_db(store)
     self.save
-    
+
   end
 
 

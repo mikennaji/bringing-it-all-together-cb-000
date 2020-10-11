@@ -45,7 +45,7 @@ def save
 end
 
 def self.create(attributes)
-    new_dog = Dog.new(name:"store",breed: "store")
+    new_dog = Dog.new(name:"",breed: "")
     attributes.each {|key, value| new_dog.send(("#{key}="), value)}
     new_dog.save
 end

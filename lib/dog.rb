@@ -42,7 +42,7 @@ end
 
 def self.create(attributes)
 
-      attributes.each {|key, value| self.send(("#{key}="), value)}
+      new_dog= self.new(attributes)
 
 end
 

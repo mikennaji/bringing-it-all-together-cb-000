@@ -76,12 +76,13 @@ def self.find_or_create_by(name:,breed:)
   SQL
   store = (DB[:conn].execute(sql,name,breed))
   if !store.empty?
-    self.new_from_db(store[0])
+    new_dog = self.new_from_db(store[0])
   else
-    self.new_from_db(store)
-    self.save
+   new_dog=  self.new_from_db(store)
+    new_dog.save
 
   end
+  new_dog
 
 
 end

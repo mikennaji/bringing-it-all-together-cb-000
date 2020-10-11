@@ -43,7 +43,7 @@ end
 def self.create(attributes)
 
       new_dog= self.new(attributes)
-
+      new_dog
 end
 
 def self.new_from_db(row)

@@ -11,7 +11,7 @@ def initialize(attributes=nil,id=nil,name,breed)
     @id = id
     @name = name
     @breed = breed
-    
+
   end
 
 

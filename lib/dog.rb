@@ -74,12 +74,13 @@ def self.find_or_create_by(name:,breed:)
   sql = <<-SQL
   SELECT * FROM dogs WHERE name = ? AND breed = ?
   SQL
-  store = (DB[:conn].execute(sql,name,breed)[0])
+  store = (DB[:conn].execute(sql,name,breed))
   if !store.empty?
-    self.new_from_db(store)
+    self.new_from_db(store[0])
   else
     self.new_from_db(store)
     self.save
+    
   end
 
 

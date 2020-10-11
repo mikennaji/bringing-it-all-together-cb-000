@@ -84,4 +84,13 @@ def self.find_or_create_by(name:,breed:)
 
 end
 
+
+def self.find_by_name(name)
+  sql = <<-SQL  
+  SELECT * FROM dogs WHERE name = ? 
+  SQL 
+  store = (DB[:conn].execute(sql,name)[0])
+   self.new_from_db(store)
+end
+
 end

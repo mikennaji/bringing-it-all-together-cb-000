@@ -79,7 +79,7 @@ def self.find_or_create_by(name:,breed:)
     new_dog = self.new_from_db(store[0])
   else
    new_dog=  self.new_from_db(store)
-    new_dog.save
+   new_dog.save
 
   end
   new_dog
